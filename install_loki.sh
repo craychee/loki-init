@@ -37,6 +37,7 @@ brew cask install openoffice
 brew cask install dropbox
 brew cask install flux
 brew cask install evernote
+brew cask install jing
 
 # mysql should start on launch
 ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
