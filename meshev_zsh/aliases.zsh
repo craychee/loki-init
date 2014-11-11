@@ -1,9 +1,7 @@
 # Vim forever and always
 export EDITOR=vim
 
-
 # Make my life easier
-alias tmux = "tmux -2"
 alias ll="ls -lhA"
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
@@ -28,3 +26,33 @@ alias meshev.review="cd $DRAFTS && say 'show no mercy'"
 
 # daily routine
 alias good.morning="tmux split-window -h && morningsunshine && say 'Another day, Michelle. It is the start of `DATE`. Good luck with your writing.' && meshev.write"
+
+# Drupal module in one command.
+makeDrupalModule() {
+  mkdir $1
+  cd $1
+  echo -e "name = $1" > $1.info
+  echo -e "core = 7.x" >> $1.info
+  echo -e "files[] =" >> $1.info
+  echo -e "<?php" > $1.module
+  echo -e "/**" >> $1.module
+  echo -e " * @file" >> $1.module
+  echo -e " * @copyright (C) Copyright 2014 Palantir.net" >> $1.module
+  echo -e " */" >> $1.module
+  echo -e "function $1_() {" >> $1.module
+  echo -e "}" >> $1.module
+}
+
+# Set up my workstation for specified project.
+workOnProject() {
+  cd ~/Projects/$1
+  vagrant up
+  tmux split-window -v
+  tmux split-window -h
+  tmux select-pane -U
+  vagrant ssh
+}
+
+# Make my life easier
+alias loki.drupal=makeDrupalModule
+alias loki.work=workOnProject

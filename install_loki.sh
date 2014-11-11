@@ -60,6 +60,10 @@ sudo gem install pomo
 wget -O the_crowd_roars.mp3 http://soundbible.com/grab.php\?id\=1995\&type\=mp3
 mv the_crowd_roars.mp3 ~/meshev-sounds/.
 
+# ZSH customizations
+echo ZSH_THEME='pygmalion' > ~/.zshrc
+echo ZSH_CUSTOM=$HOME/loki-init/meshev_zsh > ~/.zshrc
+
 # Hold my own hand to make sure I finish configuring.
 echo "Now that you are done, Michelle, don't forget that you need to:
 1. Add your ssh keys (you put them in your secret hiding place)."
@@ -70,9 +74,6 @@ echo "3. Log into Dropbox."
 pause 'Press [Enter] when you are in Dropbox.'
 echo "Now 4. Change the font and color to Solarized Dark colorscheme and patched Menlo 14pt in iTerm 2."
 pause 'Press [Enter] when iTerm looks nice.'
-echo "Finally, Add the following you your .zshrc:
-ZSH_THEME='pygmalion'
-ZSH_CUSTOM=$HOME/loki-init/meshev_zsh"
 pause 'Press [Enter] when you have rebooted iTerm.'
 echo "NICE WORK, Loki! Time to start some chaos..."
 afplay /Users/michelle/meshev-sounds/the_crowd_roars.mp3
