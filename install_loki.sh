@@ -22,6 +22,10 @@ brew install git
 brew install mysql
 brew install tmux
 brew install wget
+brew tap homebrew/dupes
+brew tap homebrew/versions
+brew tap homebrew/homebrew-php
+brew install php56
 brew tap phinze/cask
 brew install brew-cask
 brew cask install google-chrome
@@ -68,7 +72,7 @@ echo "Now 4. Change the font and color to Solarized Dark colorscheme and patched
 pause 'Press [Enter] when iTerm looks nice.'
 echo "Finally, Add the following you your .zshrc:
 ZSH_THEME='pygmalion'
-ZSH_CUSTOM=$HOME/lokiInit/meshev_zsh"
+ZSH_CUSTOM=$HOME/loki-init/meshev_zsh"
 pause 'Press [Enter] when you have rebooted iTerm.'
 echo "NICE WORK, Loki! Time to start some chaos..."
 afplay /Users/michelle/meshev-sounds/the_crowd_roars.mp3
