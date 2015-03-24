@@ -22,9 +22,17 @@ brew install git
 brew install mysql
 brew install tmux
 brew install wget
+brew install node
+brew install node
+brew install heroku-toolbelt
+brew install qt --HEAD
+brew install wkhtmltopdf
+gem install jekyll bundler
 brew tap homebrew/dupes
 brew tap homebrew/versions
 brew tap homebrew/homebrew-php
+brew tap homebrew/binary
+brew install packer
 brew install php56
 brew tap phinze/cask
 brew install brew-cask
