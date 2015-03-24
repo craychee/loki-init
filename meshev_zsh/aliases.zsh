@@ -1,11 +1,13 @@
 # Vim forever and always
 export EDITOR=vim
+export GOPATH=$HOME/Learn/go
 
 # Make my life easier
 alias ll="ls -lhA"
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
 alias gem='ruby -e "raise \"SUDO GEM DETECTED. Unalias gem at your own risk\" if ENV[\"USER\"] == \"root\"" && gem';
+alias vb-restart="sudo /Library/Application\ Support/VirtualBox/LaunchDaemons/VirtualBoxStartup.sh restart"
 
 TODAY=`date +%a.%b.%d`
 PAGES="public.md private.md"
