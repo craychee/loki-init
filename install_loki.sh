@@ -5,7 +5,7 @@ function pause(){
    read -p "$*"
  }
 # Hack to remind me to get Xcode.
-echo "Get Xcode from: https://developer.apple.com/downloads/index.action#."
+echo "Get Xcode from: https://developer.apple.com/osx/ or just try using git"
 pause 'Press [Enter] once installed.'
 
 # Christen the machine after its patron saint.
@@ -13,7 +13,7 @@ sudo scutil --set HostName loki
 
 # Get the things to make us go.
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-curl -L http://install.ohmyz.sh | sh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 brew install git
 brew install mysql
 brew install tmux
@@ -21,7 +21,6 @@ brew install wget
 brew install node
 brew install node
 brew install heroku-toolbelt
-brew install qt --HEAD
 brew install wkhtmltopdf
 gem install jekyll bundler
 brew tap homebrew/dupes
@@ -49,6 +48,10 @@ brew cask install jing
 
 # mysql should start on launch
 ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
+
+# Get useful vagrant plugins.
+vagrant plugin install vagrant-hostmanager
+vagrant plugin install vagrant-auto_network
 
 # Get vim configs with Vundle the easy way.
 git clone https://github.com/pivotalcommon/vim-config.git ~/.vim
