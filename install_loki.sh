@@ -8,15 +8,11 @@ function pause(){
 echo "Get Xcode from: https://developer.apple.com/downloads/index.action#."
 pause 'Press [Enter] once installed.'
 
-# Accept terms and install command line tools.
-sudo xcodebuild -license
-xcode-select --install
-
 # Christen the machine after its patron saint.
 sudo scutil --set HostName loki
 
 # Get the things to make us go.
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 curl -L http://install.ohmyz.sh | sh
 brew install git
 brew install mysql
