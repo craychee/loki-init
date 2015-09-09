@@ -1,6 +1,11 @@
 # Vim forever and always
 export EDITOR=vim
+
+# GO, which I will learn one day.
 export GOPATH=$HOME/Learn/go
+
+# RVM to manage ruby permission hell.
+source /usr/local/rvm/scripts/rvm
 
 # Make my life easier
 alias ll="ls -lhA"

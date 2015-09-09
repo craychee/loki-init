@@ -78,16 +78,20 @@ ln -s ~/loki-init/custom.vim ~/.vim/init/custom.vim
 # Symlink tmux configs to play nicely with vim.
 ln -s ~/.vim/bundle/tmux-config/tmux.conf ~/.tmux.conf
 
-# Workflow
-mkdir ~/Desktop/meshev-drafts
-mkdir ~/meshev-sounds
-sudo gem install pomo
-wget -O the_crowd_roars.mp3 http://soundbible.com/grab.php\?id\=1995\&type\=mp3
-mv the_crowd_roars.mp3 ~/meshev-sounds/.
-
 # ZSH customizations
 sed -e "s?robbyrussell?pygmalion?g" -in-place ~/.zshrc
 echo "ZSH_CUSTOM=$HOME/loki-init/meshev_zsh" >> ~/.zshrc
+
+# Don't rely on Mac's system's ruby. Get your own.
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
+rvm get head --auto-dotfiles
+
+# Workflow
+mkdir ~/meshev-sounds
+gem install pomo
+wget -O the_crowd_roars.mp3 http://soundbible.com/grab.php\?id\=1995\&type\=mp3
+mv the_crowd_roars.mp3 ~/meshev-sounds/.
+
 
 # Hold my own hand to make sure I finish configuring.
 echo "Now that you are done, Michelle, don't forget that you need to:
