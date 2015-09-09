@@ -36,6 +36,7 @@ brew cask install alfred
 brew cask install iterm2
 brew cask install skype
 brew cask install hipchat
+brew install ansible
 brew cask install vagrant
 brew cask install virtualbox
 brew cask install sequel-pro
@@ -53,9 +54,26 @@ ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
 vagrant plugin install vagrant-hostmanager
 vagrant plugin install vagrant-auto_network
 
+# Set up python
+brew install python
+pip install --upgrade pip
+pip install virtualenv
+pip install django
+pip completion --zsh >> ~/.zprofile
+
 # Get vim configs with Vundle the easy way.
 git clone https://github.com/pivotalcommon/vim-config.git ~/.vim
 ~/.vim/bin/install
+
+# Install Python Mode
+git clone https://github.com/klen/python-mode.git ~/.vim/bundle/python-mode
+
+# Install Pathogen
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+  curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
+# Use custom vim configs.
+ln -s ~/loki-init/custom.vim ~/.vim/init/custom.vim
 
 # Symlink tmux configs to play nicely with vim.
 ln -s ~/.vim/bundle/tmux-config/tmux.conf ~/.tmux.conf
@@ -68,19 +86,19 @@ wget -O the_crowd_roars.mp3 http://soundbible.com/grab.php\?id\=1995\&type\=mp3
 mv the_crowd_roars.mp3 ~/meshev-sounds/.
 
 # ZSH customizations
-echo ZSH_THEME='pygmalion' > ~/.zshrc
-echo ZSH_CUSTOM=$HOME/loki-init/meshev_zsh > ~/.zshrc
+sed -e "s?robbyrussell?pygmalion?g" -in-place ~/.zshrc
+echo "ZSH_CUSTOM=$HOME/loki-init/meshev_zsh" >> ~/.zshrc
 
 # Hold my own hand to make sure I finish configuring.
 echo "Now that you are done, Michelle, don't forget that you need to:
 1. Add your ssh keys (you put them in your secret hiding place)."
 pause 'Press [Enter] when you have added your ssh key.'
+chmod 400 ~/.ssh/*
 echo "Now 2. Remap your Caps to Control."
 pause 'Press [Enter] when your caps is actually functional.'
 echo "3. Log into Dropbox."
 pause 'Press [Enter] when you are in Dropbox.'
-echo "Now 4. Change the font and color to Solarized Dark colorscheme and patched Menlo 14pt in iTerm 2."
+echo "Now 4. Change the font and color to Solarized Dark colorscheme and patched Menlo 14pt in iTerm2."
 pause 'Press [Enter] when iTerm looks nice.'
-pause 'Press [Enter] when you have rebooted iTerm.'
 echo "NICE WORK, Loki! Time to start some chaos..."
 afplay /Users/michelle/meshev-sounds/the_crowd_roars.mp3
