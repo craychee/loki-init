@@ -5,15 +5,10 @@ function pause(){
    read -p "$*"
  }
 # Hack to remind me to get Xcode.
-echo "Get Xcode from: https://developer.apple.com/osx/ or just try using git"
-pause 'Press [Enter] once installed.'
 
 # Christen the machine after its patron saint.
-sudo scutil --set HostName loki
 
 # Get the things to make us go.
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 brew install git
 brew install mysql
 brew install tmux
@@ -35,7 +30,7 @@ brew cask install google-chrome
 brew cask install alfred
 brew cask install iterm2
 brew cask install skype
-brew cask install hipchat
+brew cask install slack
 brew install ansible
 brew cask install vagrant
 brew cask install virtualbox
@@ -46,6 +41,8 @@ brew cask install dropbox
 brew cask install flux
 brew cask install evernote
 brew cask install jing
+brew tap nviennot/tmate
+brewk install tmate
 
 # mysql should start on launch
 ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
@@ -60,6 +57,9 @@ pip install --upgrade pip
 pip install virtualenv
 pip install django
 pip completion --zsh >> ~/.zprofile
+
+# Install Pantheon's terminus
+curl https://github.com/pantheon-systems/cli/releases/download/0.8.1/terminus.phar -L -o /usr/local/bin/terminus && chmod +x /usr/local/bin/terminus
 
 # Get vim configs with Vundle the easy way.
 git clone https://github.com/pivotalcommon/vim-config.git ~/.vim
