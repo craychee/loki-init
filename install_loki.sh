@@ -10,13 +10,14 @@ function pause(){
 
 # Get the things to make us go.
 brew install git
+brew install docker
 brew install mysql
 brew install tmux
 brew install wget
 brew install node
-brew install node
 brew install heroku-toolbelt
 brew install wkhtmltopdf
+brew install yubico-piv-tool ykpers opensc
 gem install jekyll bundler
 brew tap homebrew/dupes
 brew tap homebrew/versions
@@ -89,6 +90,7 @@ rvm get head --auto-dotfiles
 # Workflow
 mkdir ~/meshev-sounds
 gem install pomo
+gem install package_cloud
 wget -O the_crowd_roars.mp3 http://soundbible.com/grab.php\?id\=1995\&type\=mp3
 mv the_crowd_roars.mp3 ~/meshev-sounds/.
 
