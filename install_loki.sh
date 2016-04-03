@@ -5,8 +5,10 @@ function pause(){
    read -p "$*"
  }
 # Hack to remind me to get Xcode.
+sudo llvm-gcc
 
 # Christen the machine after its patron saint.
+sudo scutil --set HostName loki
 
 # Get the things to make us go.
 brew install git
@@ -16,6 +18,7 @@ brew install tmux
 brew install wget
 brew install node
 brew install heroku-toolbelt
+brew install postgres
 brew install wkhtmltopdf
 brew install yubico-piv-tool ykpers opensc
 gem install jekyll bundler
@@ -55,9 +58,16 @@ vagrant plugin install vagrant-auto_network
 # Set up python
 brew install python
 pip install --upgrade pip
+pip install flake8
 pip install virtualenv
-pip install django
 pip completion --zsh >> ~/.zprofile
+# Install http://www.vim.org/scripts/script.php?script_id=790
+
+# Install postgres
+initdb /usr/local/var/postgres
+mkdir -p ~/Library/LaunchAgents
+ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 
 # Install Pantheon's terminus
 curl https://github.com/pantheon-systems/cli/releases/download/0.8.1/terminus.phar -L -o /usr/local/bin/terminus && chmod +x /usr/local/bin/terminus
@@ -93,7 +103,6 @@ gem install pomo
 gem install package_cloud
 wget -O the_crowd_roars.mp3 http://soundbible.com/grab.php\?id\=1995\&type\=mp3
 mv the_crowd_roars.mp3 ~/meshev-sounds/.
-
 
 # Hold my own hand to make sure I finish configuring.
 echo "Now that you are done, Michelle, don't forget that you need to:
