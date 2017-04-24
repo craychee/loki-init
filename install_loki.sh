@@ -11,23 +11,24 @@ sudo llvm-gcc
 sudo scutil --set HostName loki
 
 # Get the things to make us go.
+brew update
 brew install git
 brew install docker
 brew install mysql
 brew install tmux
 brew install wget
 brew install node
-brew install heroku-toolbelt
+brew install heroku
 brew install postgres
-brew install wkhtmltopdf
 brew install yubico-piv-tool ykpers opensc
-gem install jekyll bundler
+gem install foreman jekyll bundler
 brew tap homebrew/dupes
 brew tap homebrew/versions
 brew tap homebrew/homebrew-php
+brew tap homebrew/php
 brew tap homebrew/binary
 brew install packer
-brew install php56
+brew install php70
 brew tap phinze/cask
 brew install brew-cask
 brew cask install google-chrome
@@ -47,6 +48,17 @@ brew cask install evernote
 brew cask install jing
 brew tap nviennot/tmate
 brewk install tmate
+brew install homebrew/php/terminus
+brew install autoenv # https://github.com/kennethreitz/python-guide/blob/master/docs/dev/virtualenvs.rst#autoenv
+
+# pin openssl
+brew install https://raw.githubusercontent.com/Homebrew/homebrew-dupes/cfb76ecdb78414518b2822aad9364615439af1ea/openssh.rb --with-brewed-openssl --with-keychain-support --with-default-names
+brew pin openssh
+
+# install GCP
+curl https://sdk.cloud.google.com | bash
+exec -l $SHELL
+gcloud components install kubectl
 
 # mysql should start on launch
 ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
