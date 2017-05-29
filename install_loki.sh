@@ -10,10 +10,12 @@ sudo llvm-gcc
 # Christen the machine after its patron saint.
 sudo scutil --set HostName loki
 
+# Get Homebrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 # Get the things to make us go.
 brew update
 brew install git
-brew install docker
 brew install mysql
 brew install tmux
 brew install wget
@@ -21,7 +23,6 @@ brew install node
 brew install heroku
 brew install postgres
 brew install yubico-piv-tool ykpers opensc
-gem install foreman jekyll bundler
 brew tap homebrew/dupes
 brew tap homebrew/versions
 brew tap homebrew/homebrew-php
@@ -81,9 +82,6 @@ mkdir -p ~/Library/LaunchAgents
 ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 
-# Install Pantheon's terminus
-curl https://github.com/pantheon-systems/cli/releases/download/0.8.1/terminus.phar -L -o /usr/local/bin/terminus && chmod +x /usr/local/bin/terminus
-
 # Get vim configs with Vundle the easy way.
 git clone https://github.com/pivotalcommon/vim-config.git ~/.vim
 ~/.vim/bin/install
@@ -102,19 +100,18 @@ ln -s ~/loki-init/custom.vim ~/.vim/init/custom.vim
 ln -s ~/.vim/bundle/tmux-config/tmux.conf ~/.tmux.conf
 
 # ZSH customizations
-sed -e "s?robbyrussell?pygmalion?g" -in-place ~/.zshrc
-echo "ZSH_CUSTOM=$HOME/loki-init/meshev_zsh" >> ~/.zshrc
+ln -s ~/loki-install/.zshrc ~/.zshrc
 
 # Don't rely on Mac's system's ruby. Get your own.
 \curl -sSL https://get.rvm.io | bash -s stable --ruby
 rvm get head --auto-dotfiles
+gem install foreman jekyll bundler
 
 # Workflow
 mkdir ~/meshev-sounds
 gem install pomo
 gem install package_cloud
-wget -O the_crowd_roars.mp3 http://soundbible.com/grab.php\?id\=1995\&type\=mp3
-mv the_crowd_roars.mp3 ~/meshev-sounds/.
+wget -O ~/meshev-sounds/the_crowd_roars.mp3 http://soundbible.com/grab.php\?id\=1995\&type\=mp3
 
 # Hold my own hand to make sure I finish configuring.
 echo "Now that you are done, Michelle, don't forget that you need to:
@@ -123,9 +120,13 @@ pause 'Press [Enter] when you have added your ssh key.'
 chmod 400 ~/.ssh/*
 echo "Now 2. Remap your Caps to Control."
 pause 'Press [Enter] when your caps is actually functional.'
-echo "3. Log into Dropbox."
+echo "3. Get your passwords."
+pause 'Press [Enter] when you retrieved your passwords.'
+echo "4. Log into Dropbox."
 pause 'Press [Enter] when you are in Dropbox.'
-echo "Now 4. Change the font and color to Solarized Dark colorscheme and patched Menlo 14pt in iTerm2."
+echo "5. Get Docker: https://download.docker.com/mac/stable/Docker.dmg."
+pause 'Press [Enter] when you have installed docker.'
+echo "Now 6. Change the font and color to Solarized Dark colorscheme and patched Menlo 14pt in iTerm2."
 pause 'Press [Enter] when iTerm looks nice.'
 echo "NICE WORK, Loki! Time to start some chaos..."
-afplay /Users/michelle/meshev-sounds/the_crowd_roars.mp3
+afplay ~/meshev-sounds/the_crowd_roars.mp3

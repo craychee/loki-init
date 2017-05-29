@@ -1,11 +1,14 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/michellekrejci/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="pygmalion"
+
+plugins=(git)
+
+# User configuration
+
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -23,9 +26,12 @@ export MTURK_SETTINGS=/Users/michellekrejci/Learn/mturk-poc/settings.cfg
 # Virtualenvwrapper setup
 export WORKON_HOME=$HOME/.envs
 source /usr/local/bin/virtualenvwrapper.sh
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
-export PATH=$PATH:/usr/local/go/bin
+#export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
+#export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/Pantheon:$HOME/Sites
+
+# Export github token for Pants
+export GITHUB_TOKEN="2cbab4041cf184c16372b5c089deb4de5fbd0d7b"
 
 #set -o vi
 bindkey -v
@@ -33,12 +39,14 @@ bindkey '^R' history-incremental-search-backward
 
 # The next line updates PATH for the Google Cloud SDK.
 source '/Users/michellekrejci/google-cloud-sdk/path.zsh.inc'
-export GOOGLE_APPLICATION_CREDENTIALS=
+export GOOGLE_APPLICATION_CREDENTIALS='/Users/michellekrejci/.config/gcloud/application_default_credentials.json'
 
 # The next line enables shell command completion for gcloud.
 source '/Users/michellekrejci/google-cloud-sdk/completion.zsh.inc'
 export PATH="/usr/local/sbin:$PATH"
 
+# Add miniconda to path.
+export PATH=/Users/michellekrejci/miniconda2/bin:$PATH
 
 export PATH=$GOPATH/bin:$PATH
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
