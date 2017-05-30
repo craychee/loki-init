@@ -31,7 +31,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 export GOPATH=$HOME/Pantheon:$HOME/Sites
 
 # Export github token for Pants
-export GITHUB_TOKEN="2cbab4041cf184c16372b5c089deb4de5fbd0d7b"
+export GITHUB_TOKEN=""
 
 #set -o vi
 bindkey -v

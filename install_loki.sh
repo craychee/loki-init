@@ -6,6 +6,7 @@ function pause(){
  }
 # Hack to remind me to get Xcode.
 sudo llvm-gcc
+xcode-select --install
 
 # Christen the machine after its patron saint.
 sudo scutil --set HostName loki
@@ -22,21 +23,20 @@ brew install wget
 brew install node
 brew install heroku
 brew install postgres
-brew install yubico-piv-tool ykpers opensc
 brew tap homebrew/dupes
 brew tap homebrew/versions
 brew tap homebrew/homebrew-php
 brew tap homebrew/php
 brew tap homebrew/binary
-brew install packer
+brew tap homebrew/core
 brew install php70
 brew tap phinze/cask
 brew install brew-cask
 brew cask install google-chrome
 brew cask install alfred
 brew cask install iterm2
-brew cask install skype
 brew cask install slack
+brew install bash pinentry-mac gnupg@2.1 ykpers yubico-piv-tool opensc
 brew install ansible
 brew cask install vagrant
 brew cask install virtualbox
