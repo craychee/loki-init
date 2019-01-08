@@ -1,4 +1,4 @@
-All bow down a tremble before me.
+All bow down and tremble before me.
 
 ## Getting Started... I guess.
 
