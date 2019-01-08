@@ -20,16 +20,12 @@ brew install git
 brew install mysql
 brew install tmux
 brew install wget
+brew install wrk
 brew install node
 brew install heroku
-brew install postgres
-brew tap homebrew/dupes
-brew tap homebrew/versions
-brew tap homebrew/homebrew-php
-brew tap homebrew/php
+brew install php
 brew tap homebrew/binary
 brew tap homebrew/core
-brew install php70
 brew tap phinze/cask
 brew install brew-cask
 brew cask install google-chrome
@@ -37,9 +33,6 @@ brew cask install alfred
 brew cask install iterm2
 brew cask install slack
 brew install bash pinentry-mac gnupg@2.1 ykpers yubico-piv-tool opensc
-brew install ansible
-brew cask install vagrant
-brew cask install virtualbox
 brew cask install sequel-pro
 brew cask install mou
 brew cask install openoffice
@@ -64,10 +57,6 @@ gcloud components install kubectl
 # mysql should start on launch
 ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
 
-# Get useful vagrant plugins.
-vagrant plugin install vagrant-hostmanager
-vagrant plugin install vagrant-auto_network
-
 # Set up python
 brew install python
 pip install --upgrade pip
@@ -75,12 +64,6 @@ pip install flake8
 pip install virtualenv
 pip completion --zsh >> ~/.zprofile
 # Install http://www.vim.org/scripts/script.php?script_id=790
-
-# Install postgres
-initdb /usr/local/var/postgres
-mkdir -p ~/Library/LaunchAgents
-ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
-launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 
 # Get vim configs with Vundle the easy way.
 git clone https://github.com/pivotalcommon/vim-config.git ~/.vim
