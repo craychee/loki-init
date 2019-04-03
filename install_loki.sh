@@ -24,6 +24,8 @@ brew install wrk
 brew install node
 brew install heroku
 brew install php
+brew install kubectx
+brew install stern
 brew tap homebrew/binary
 brew tap homebrew/core
 brew tap phinze/cask
